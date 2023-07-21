@@ -1,0 +1,7 @@
+git init
+git status
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/Vignesh6F/docksfile.git
+git remote set-url origin https://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@github.com/Vignesh6F/docksfile.git
+git push -u -f origin master
