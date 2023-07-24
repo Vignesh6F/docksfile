@@ -1,0 +1,5 @@
+docker run --name mongodb -v data:/data/db --rm -d --network froend-net
+ -e MONGO_INITDB_ROOT_USERNAME=vky -e MONGO_INITDB_ROOT_PASSWORD=vky mongo
+
+
+'mongodb://vky:vky@mongodb:27017/course-goals?authSource=admin',
