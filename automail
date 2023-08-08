@@ -1,0 +1,4 @@
+cd /home/ec2-user
+zip -r 86.zip 86.sql
+uuencode 86.zip 86.zip | mailx -v -s "DATABASE BACKUP" "vigneshr@trioangle.com"
+rm -rf 86.zip
