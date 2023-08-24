@@ -4,6 +4,6 @@ docker run --name mongodb -v data:/data/db --rm -d --network froend-net
 
 'mongodb://vky:vky@mongodb:27017/course-goals?authSource=admin',
 
-
+https://vignesh_palanivel_@bitbucket.org/vignesh_palanivel_/env_auto.git
 
 sudo cat /etc/shadow | tail -n  5 | tr ":" "\t"
