@@ -7,3 +7,12 @@ docker run --name mongodb -v data:/data/db --rm -d --network froend-net
 https://vignesh_palanivel_@bitbucket.org/vignesh_palanivel_/env_auto.git
 
 sudo cat /etc/shadow | tail -n  5 | tr ":" "\t"
+
+
+curl -X POST "https://api.cloudflare.com/client/v4/zones/be2133047225256f4535668aa35cd942/dns_records" \
+     -H "X-Auth-Email: sysad@trioangle.com" \
+     -H "X-Auth-Key: e4a633683c97831e5fc1400ba774206495f70" \
+     -H "Content-Type: application/json" \
+     --data '{"type":"A","name":"vicky","content":"11.224.15.2","ttl":1,"priority":10,"proxied":false}'
+
+curl --request GET --url https://api.cloudflare.com/client/v4/zones/be2133047225256f4535668aa35cd942/dns_records --header 'Content-Type: application/json' --header 'X-Auth-Email:sysad@trioangle.com ' --header 'X-Auth-Key:e4a633683c97831e5fc1400ba774206495f70'
