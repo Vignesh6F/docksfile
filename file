@@ -18,6 +18,13 @@ curl -X POST "https://api.cloudflare.com/client/v4/zones/be2133047225256f4535668
 curl --request GET --url https://api.cloudflare.com/client/v4/zones/be2133047225256f4535668aa35cd942/dns_records --header 'Content-Type: application/json' --header 'X-Auth-Email:sysad@trioangle.com ' --header 'X-Auth-Key:e4a633683c97831e5fc1400ba774206495f70'
 
 
+echo "last successfull build commit id : GIT_PREVIOUS_SUCCESSFUL_COMMIT" $GIT_PREVIOUS_SUCCESSFUL_COMMIT ;
+echo "current build commit id : GIT_COMMIT" $GIT_COMMIT
+echo "workspace location"$WORKSPACE;
+echo "build number" $BUILD_NUMBER;
+mkdir $WORKSPACE/$BUILD_NUMBER;
+cp -rfpv --parents `git diff $GIT_COMMIT $GIT_PREVIOUS_SUCCESSFUL_COMMIT --name-only` $WORKSPACE/$BUILD_NUMBER ||:;
+
 
 https://id.atlassian.com/login                                                                     /var/www/html/resources/views/admin/common.      Mac :  sudo lsof -i:80.  https://stackoverflow.com/questions/24547016/uninstall-mongodb-on-mac-os-x	
 Vignesh R
