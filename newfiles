@@ -5,3 +5,6 @@ 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
 
 skype:   vigneshrmaticz@gmail.com
 password:  Vigneshr@087
+
+
+scp id_rsa.pub satheesh@200.140.70.102:/home/satheesh/.ssh
