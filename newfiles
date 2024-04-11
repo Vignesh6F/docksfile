@@ -8,3 +8,4 @@ password:  Vigneshr@087
 
 
 scp id_rsa.pub satheesh@200.140.70.102:/home/satheesh/.ssh
+ansible developer -m command -a "free -h"
