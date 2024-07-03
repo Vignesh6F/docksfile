@@ -1,5 +1,5 @@
 
-sysad@trioangle.com
+sysad@trioangle.com             ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head
 $#@Dmin^2023*
 
 https://docs.vultr.com/how-to-install-goaccess-on-centos-7
