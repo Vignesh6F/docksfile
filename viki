@@ -1,5 +1,7 @@
 
-sysad@trioangle.com             ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head
+sysad@trioangle.com             ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head                  https://211125642996.signin.aws.amazon.com/console
+
+vignesh Vnoflavin@123
 $#@Dmin^2023*
 
 https://docs.vultr.com/how-to-install-goaccess-on-centos-7
