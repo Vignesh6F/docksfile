@@ -4,7 +4,8 @@ sysad@trioangle.com             ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | hea
 vignesh Vnoflavin@123
 $#@Dmin^2023*
 
-https://docs.vultr.com/how-to-install-goaccess-on-centos-7
+https://docs.vultr.com/how-to-install-goaccess-on-centos-7                     cp -pv --parents `git diff d22f47d1 001277c9 --name-only` mar23
+
 
 https://id.atlassian.com/login                                                                     /var/www/html/resources/views/admin/common.      Mac :  sudo lsof -i:80.  https://stackoverflow.com/questions/24547016/uninstall-mongodb-on-mac-os-x	
 Vignesh R
