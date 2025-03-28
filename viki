@@ -591,3 +591,10 @@ git push -f origin master
 Database User Username: Cluster48400
 Database User Password: TEVsZEhzfHpR
 	
+curl -X POST "https://api.cloudflare.com/client/v4/zones/fbc7cd6eba202db4ae2f2ed42bd99e5d/dns_records" -H "Authorization: Bearer m7spLup7I8FwTKh8I3mAZvlhXrn4PObLcZfGBWd0"      -H "Content-Type: application/json"      --data '{
+       "type": "A",
+       "name": "'$domainame-backend'",
+       "content": "'$IP'",
+       "ttl": 120,
+       "proxied": true
+     }'
