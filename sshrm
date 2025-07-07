@@ -1,0 +1,47 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'BRANCH_NAME', defaultValue: 'develop', description: 'Git branch to build and deploy')
+    }
+
+    environment {
+        STAGING_SERVER = 'ubuntu@13.201.39.76'      // Replace with actual Server A IP (for develop)
+        PRODUCTION_SERVER = 'ubuntu@13.233.7.173'   // Replace with actual Server B IP (for master)
+    }
+
+    stages {
+        stage('Checkout Code') {
+            steps {
+                git credentialsId: 'bitbucket',
+                    url: 'https://vigneshrgaipp@bitbucket.org/yogeswaran2796/workflowcheck.git',
+                    branch: "${params.BRANCH_NAME}"
+            }
+        }
+
+        stage('Build & Deploy') {
+            steps {
+                script {
+                    def targetServer = ''
+
+                    if (params.BRANCH_NAME == 'develop') {
+                        targetServer = env.STAGING_SERVER
+                    } else if (params.BRANCH_NAME == 'master') {
+                        targetServer = env.PRODUCTION_SERVER
+                    } else {
+                        error "❌ Unsupported branch: ${params.BRANCH_NAME}. Deployment only allowed for 'develop' or 'master'."
+                    }
+
+                    echo "🚀 Deploying '${params.BRANCH_NAME}' to ${targetServer}"
+
+                    sshagent(credentials: ['mine']) {
+                        sh """
+                            ssh -o StrictHostKeyChecking=no ${targetServer} 'mkdir -p /var/www/html/branch-${params.BRANCH_NAME}'
+                            scp -o StrictHostKeyChecking=no -r * ${targetServer}:/var/www/html/branch-${params.BRANCH_NAME}/
+                        """
+                    }
+                }
+            }
+        }
+    }
+}
