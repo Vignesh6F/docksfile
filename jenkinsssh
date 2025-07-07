@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('SSH to Remote Server') {
+            steps {
+                sshagent(credentials: ['dem80']) {
+                    sh """
+                        ssh -o StrictHostKeyChecking=no root@80.85.84.50 <<EOF
+                            echo "✅ Connected to remote server"
+                            cd /var/www/html
+                            mkdir -p testinggg
+                    """
+                }
+            }
+        }
+    }
+}
